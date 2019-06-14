@@ -1,11 +1,12 @@
 const express = require('express');
 const router = express.Router();
 
+const authorize = require('../auth/authorize-middleware');
+
 const {
   getUsers,
 
 } = require('../../helpers');
-
 
 /*
 @GET: users
@@ -13,7 +14,7 @@ const {
 @ROUTE: "/api/users"
 */
 
-router.get('/', async (req, res) => {
+router.get('/', authorize, async (req, res) => {
   try {
     const users = await getUsers();
 
