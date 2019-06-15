@@ -1,8 +1,32 @@
 import React, { Component } from "react";
 
+import axios from './helpers/api';
+
 class Users extends Component {
 
-  componentDidMount() {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      users: [],
+    }
+    // this.defaultState = this.state;
+
+  }
+
+  async componentDidMount() {
+
+    try {
+      const result = await axios.get('/users');
+
+      this.setState({
+        users: result.data,
+      })
+
+    }
+    catch (err) {
+      console.error(err);
+    }
 
   }
 
@@ -10,9 +34,18 @@ class Users extends Component {
 
     return (
       <>
-        <div className="users">
+        <h2 className="users">
           Users
-        </div>
+        </h2>
+
+        <ul className="users-list">
+          {this.state.users.map((user) => {
+
+            return <li key={user.id}> {user.username} </li>
+
+          })}
+        </ul>
+
       </>
     );
   }

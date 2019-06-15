@@ -30,7 +30,7 @@ class SignUp extends Component {
 
     try {
 
-      const result = await axios.post('auth/register', {
+      const result = await axios.post('/auth/register', {
         username,
         password,
         department,

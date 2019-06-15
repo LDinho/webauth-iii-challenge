@@ -29,7 +29,7 @@ class Login extends Component {
 
     try {
 
-      const result = await axios.post('auth/login', {
+      const result = await axios.post('/auth/login', {
         username,
         password,
       });

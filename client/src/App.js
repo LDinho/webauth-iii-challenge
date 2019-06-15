@@ -16,11 +16,11 @@ function App() {
           Auth User App
         </h1>
         <nav>
-          <ul>
-            <li><NavLink to="/">Home</NavLink></li>
-            <li><NavLink to="/login">Log in</NavLink></li>
-            <li><NavLink to="/signup">Sign up</NavLink></li>
-            <li><NavLink to="/users">Users</NavLink></li>
+          <ul className="nav-list-ul">
+            <li className="nav-list-li"><NavLink to="/">Home</NavLink></li>
+            <li className="nav-list-li"><NavLink to="/login">Log in</NavLink></li>
+            <li className="nav-list-li"><NavLink to="/signup">Sign up</NavLink></li>
+            <li className="nav-list-li"><NavLink to="/users">Users</NavLink></li>
           </ul>
         </nav>
       </header>
