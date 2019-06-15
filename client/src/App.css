@@ -28,6 +28,10 @@
 
 }
 
+ul {
+  padding-inline-start: unset;
+}
+
 .users-list {
   display: flex;
   flex-direction: column;

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 
 import axios from './helpers/api';
 
@@ -37,7 +38,8 @@ class Login extends Component {
       const token = result.data.authToken;
       localStorage.setItem('token', token);
 
-      console.log(result);
+      this.props.history.push('/users');
+
     }
     catch (err) {
       console.error(err);
@@ -78,4 +80,4 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export default withRouter(Login);
