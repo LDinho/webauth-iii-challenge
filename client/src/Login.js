@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+
+import axios from './helpers/api';
 
 class Login extends Component {
 
@@ -28,8 +29,7 @@ class Login extends Component {
 
     try {
 
-      const url = `http://localhost:3300/api/auth/login`;
-      const result = await axios.post(url, {
+      const result = await axios.post('auth/login', {
         username,
         password,
       });
