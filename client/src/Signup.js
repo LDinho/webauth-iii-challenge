@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { withRouter } from 'react-router-dom';
 
 import axios from './helpers/api';
 
@@ -35,6 +36,8 @@ class SignUp extends Component {
         password,
         department,
       });
+
+      this.props.history.push('/users');
 
       console.log(result);
 
@@ -84,4 +87,4 @@ class SignUp extends Component {
   }
 }
 
-export default SignUp;
+export default withRouter(SignUp);

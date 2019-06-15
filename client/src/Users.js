@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { withRouter } from 'react-router-dom';
+
 
 import axios from './helpers/api';
 
@@ -25,9 +27,15 @@ class Users extends Component {
 
     }
     catch (err) {
-      console.error(err);
-    }
+      if (err.response.status === 403 || err.response.status === 401) {
+        this.props.history.push('/login');
 
+      } else {
+
+        console.error(err);
+      }
+
+    }
   }
 
   render() {
@@ -51,4 +59,4 @@ class Users extends Component {
   }
 }
 
-export default Users;
+export default withRouter(Users);
