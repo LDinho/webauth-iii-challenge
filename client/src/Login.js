@@ -34,8 +34,10 @@ class Login extends Component {
         password,
       });
 
-      console.log(result);
+      const token = result.data.authToken;
+      localStorage.setItem('token', token);
 
+      console.log(result);
     }
     catch (err) {
       console.error(err);
